@@ -34,9 +34,9 @@ def call(Map config=[:]) {
             for (change in changeLogSets) {
                 def entries = change.items;
                 for (entry in entries) {
-                    write.writeLine("${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg}")
+                    writer.writeLine("${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg}")
                     for (file in entry.affectedFiles) {
-                        write.writeLine("${file.editType.name} ${file.path}");
+                        writer.writeLine("${file.editType.name} ${file.path}");
                     }
                 }
             }
