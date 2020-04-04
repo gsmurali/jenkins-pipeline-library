@@ -28,7 +28,7 @@ echo "Date and Time IS: " + sdf.format(date)
 
 echo "Build Number is: ${BUILD_NUMBER}";
 
-def changeLogSets = currenBuild.changeSets;
+def changeLogSets = currentBuild.changeSets;
 
 for (change in changeLogSets) {
     def entries = change.items;
